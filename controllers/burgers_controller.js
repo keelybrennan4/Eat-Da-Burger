@@ -23,9 +23,5 @@ router.get('/', function(req, res){
 
 
 
-
-
-
-
 // export routes for server.js to use.
 module.exports = router;
