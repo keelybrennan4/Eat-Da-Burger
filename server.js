@@ -1,6 +1,7 @@
 //dependencies
 var bodyParser = require('body-parser');
 var express = require('express');
+var exhbs = require('express-handlebars');
 
 var PORT = process.env.PORT || 8080;
 var app = express();
