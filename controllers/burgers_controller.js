@@ -9,7 +9,7 @@ router.get("/", function(req, res){
     burger.all(function(burger_data){
         //console.log(burger_data);
         var hbsObj = {
-            burgers: data
+            burgers: burger_data
         };
         for (i=0; i<hbsObj.burgers.length; i++){
             hbsObj.burgers[i].devoured = parseInt(hbsObj.burgers[i].devoured);
