@@ -4,8 +4,6 @@ var router = express.Router();
 // Import the model burger.js to use its database functions.
 var burger = require("../models/burger.js");
 
-//// Create all routes and set up logic within those routes
-
 //render index within views folder 
 router.get("/", function(req, res){
     burger.selectAll(function(data){
@@ -20,7 +18,7 @@ router.get("/", function(req, res){
 
 router.post("/api/burgers", function (req, res){
     burger.insertOne([
-        "name", "devoured"
+        "burger_name", "devoured"
     ], [
         req.body.burger_name, req.body.devoured
     ], function(result) {
@@ -42,7 +40,6 @@ router.put("api/burgers/:id", function (req, res){
           }
     });
 });
-
 
 //router.delete()
 

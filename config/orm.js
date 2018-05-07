@@ -31,13 +31,7 @@ for (var key in ob) {
   return arr.toString();
 }
 
-
-
 // methods to execute the necessary MySQL commands in the controllers to retrieve and store data in db
-//selectAll()
-//insertOne()
-//updateOne()
-
 // Object for all SQL statement functions.
 var orm = {
     selectAll: function(tableInput, cb) {
