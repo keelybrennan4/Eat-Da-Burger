@@ -5,16 +5,14 @@
         <div class="col-md-6 text-left">
             <h2>Burgers Remaining</h2>
                 <ul>
-                    {{#each burger_data}}
+                    {{#each burgers}}
                         {{#unless this.devoured}}
                         <h3>{{this.id}}. {{this.burger_name}}</h3>
 
                     <form method="PUT" action="/api/burgers/update?_method=PUT" class="button-size">
                         <input type="hidden" name="burger_name" type="text" value="{{this.id}}">
                         <br>
-                        <button type="submit" class="btn btn-default">
-                            DEVOUR IT
-                        </button>   
+                        <button type="submit" class="btn btn-default">DEVOUR IT</button>   
                     </form>
                     {{/unless}}
                     {{/each}}
@@ -24,7 +22,7 @@
         <div class="col-md-6 text-left"></div>
             <h2>Burgers Devoured</h2>
                 <ul>
-                    {{#each burger_data}}
+                    {{#each burgers}}
                         {{#if this.devoured}}
                         <h3>{{this.id}}. {{this.burger_name}}</h3>
                         {{/if}}
@@ -33,15 +31,17 @@
         </div>
 
         <div class= "container">
-            <div class="col-md-3"></div>
-            <div class="col-md-6 text-center">
-                <h3>Enter in a burger you would like to eat:</h3>  
-                <form id="addburger" method="POST">
-                    <textarea  type="text" name="burger_name"></textarea>
-                    <br>
-                <button type="submit" class="btn btn-default">ADD BURGER</button> 
-                </form>
-            </div>
-            <div class="col-md-3"></div>
+        <div class="col-md-3"></div>
+            
+        <div class="col-md-6 text-center">
+            <h3>Hungry for a different burger? Enter below:</h3>  
+            <form id="addburger" method="POST">
+                <textarea  type="text" name="burger_name"></textarea>
+                <br>
+            <button type="submit" class="btn btn-default">ADD BURGER</button> 
+            </form>
         </div>
+
+        <div class="col-md-3"></div>
+    </div>
 </div>
