@@ -10,10 +10,8 @@ var burger = {
     },
     
     // cols and vals are arrays
-    create: function(cols, vals, cb) {
-      orm.create("burgers", cols, vals, cb, function(res) {
-        cb(res);
-      });
+    create: function(name, cb) {
+      orm.create("burgers", name, cb);
     },
 
     update: function(id, cb) {
