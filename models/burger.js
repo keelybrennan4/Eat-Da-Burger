@@ -9,13 +9,12 @@ var burger = {
       });
     },
     
-    // cols and vals are arrays
-    create: function(name, cb) {
-      orm.create("burgers", name, cb);
+    create: function(newBurger) {
+      orm.create("burgers", "burger_name", "devoured", newBurger, "0");
     },
 
     update: function(id, cb) {
-      orm.update("burgers", id, cb);
+      orm.update("burgers", "devoured", "1", "id", id);
     },
 };
 
