@@ -1,7 +1,7 @@
 // import MySQL connection
 var connection = require("../config/connection.js");
 
-// methods to execute the necessary MySQL queries 
+// methods to execute MySQL queries 
 var orm = {
     all: function(table, cb) {
       var queryString = "SELECT * FROM ??";
