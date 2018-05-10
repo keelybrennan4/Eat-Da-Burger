@@ -7,7 +7,7 @@ var burger = require("../models/burger.js");
 //render index within views folder 
 router.get("/", function(req, res){
     burger.all(function(burger_data){
-        //console.log(burger_data);
+        console.log(burger_data);
         var hbsObj = {
             burgers: burger_data
         };
