@@ -8,9 +8,10 @@
                     {{#each burgers}}
                         {{#unless this.devoured}}
                         <h3>{{this.id}}. {{this.burger_name}}</h3>
-
-                            <form action="/{{this.id}}?_method=PUT" method="POST">
-                                <button type="submit" class="btn btn-default">DEVOUR IT</button>
+                            <form method="POST" action="/{{this.id}}_method=PUT">
+                                 
+                                <button type="submit" class="btn btn-default">
+                                </span>DEVOUR <span class="glyphicon glyphicon-menu-hamburger"></button>
                             </form>
                         {{/unless}}
                     {{/each}}
@@ -22,7 +23,7 @@
                 <ul>
                     {{#each burgers}}
                         {{#if this.devoured}}
-                        <h3>{{this.id}}. {{this.burger_name}}</h3>
+                        <h3>{{this.id}}. {{this.burger_name}} ✓</h3>
                         {{/if}}
                     {{/each}}
                 </ul>
@@ -36,7 +37,7 @@
             <form class="addburger" action="/" method="POST">
                 <input type="textbox" class="form-control col-md-4" name="newBurger" maxlength="100">
                 <span class="addburger-btn">
-                    <button type="submit" class="btn btn-default">ADD BURGER</button> 
+                    <button type="submit" class="btn btn-default">ADD DA BURGER</button> 
                 </span>
             </form>
         </div>
