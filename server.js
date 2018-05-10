@@ -4,7 +4,7 @@ var express = require('express');
 var exhbs = require('express-handlebars');
 
 var app = express();
-var PORT = process.env.PORT || 8070;
+var PORT = process.env.PORT || 3000;
 
 // serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
