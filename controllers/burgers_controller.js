@@ -23,9 +23,12 @@ router.post("/", function (req, res){
     res.redirect("/");
 });
 
-router.put("/:id", function(req, res) {
-    burger.update(req.params.id);
-    res.redirect("/");
+router.put("/burgers/update", function(req, res) {
+    burger.update(req.body.id, function(result){
+        console.log(result);
+        res.redirect("/"); 
+    });
+
 });
 
 // export routes for server.js to use.

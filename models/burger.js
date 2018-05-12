@@ -10,12 +10,12 @@ var burger = {
     },
     
     create: function(newBurger) {
-      orm.create("burgers", "burger_name", "devoured", newBurger, "0");
+      orm.create("burgers", ["burger_name", "devoured"], [newBurger, FALSE], cb);
     },
 
     update: function(id, cb) {
-      console.log(cb);
-      orm.update("burgers", "burger_name", "devoured", "1", "id", id);
+      //console.log(cb);
+      orm.update("burgers", id, cb);
     },
 };
 

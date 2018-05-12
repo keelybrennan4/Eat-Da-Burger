@@ -7,24 +7,23 @@ var orm = {
       var queryString = "SELECT * FROM ??";
       connection.query(queryString, [table], function(err, result) {
         if (err) throw err;
-        if(cb){
-          cb(result);
-        }
+//
+        cb(result);
+//}
       });
     },
 
     create: function(table, col1, col2, val1, val2) {
-      var queryString = "INSERT INTO ??(??, ??) VALUES (?, ?)";
-      connection.query(queryString, [table, col1, col2, val1, val2], function (err) {
+      connection.query("SELECT * FROM "+table+";", function (err) {
         if (err) throw err;
       });
     },  
 
-    update: function(table, col1, col2, val1, val2) {
-      var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-      connection.query(queryString [table, col1, val1, col2, val2], function (err){
-      if(err)throw err;
-    });
+    update: function(table, condition, cb) {
+      connection.query("UPDATE " +table+" SET devoured=true WHERE id= "+condition+";", function(err, result){
+        if(err)throw err;
+        cb(result);
+    })
   }
 };
 
