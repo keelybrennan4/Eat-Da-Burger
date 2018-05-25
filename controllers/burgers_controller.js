@@ -18,17 +18,16 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/", function (req, res){
-    burger.create(req.body.newBurger);
+router.post("/burgers/create", function (req, res){
+    burger.create(req.body.burger_name, function(result);
     res.redirect("/");
 });
 
 router.put("/burgers/update", function(req, res) {
     burger.update(req.body.id, function(result){
-        console.log(result);
-        res.redirect("/"); 
+    console.log(result);
+    res.redirect("/"); 
     });
-
 });
 
 // export routes for server.js to use.

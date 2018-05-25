@@ -9,8 +9,8 @@ var burger = {
       });
     },
     
-    create: function(newBurger) {
-      orm.create("burgers", ["burger_name", "devoured"], [newBurger, FALSE], cb);
+    create: function(burger_name, cb) {
+      orm.create("burgers", burger_name, cb);
     },
 
     update: function(id, cb) {

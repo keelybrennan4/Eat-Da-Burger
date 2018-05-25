@@ -7,13 +7,11 @@ var orm = {
       var queryString = "SELECT * FROM ??";
       connection.query(queryString, [table], function(err, result) {
         if (err) throw err;
-//
         cb(result);
-//}
       });
     },
 
-    create: function(table, col1, col2, val1, val2) {
+    create: function(table,val, cb) {
       connection.query("SELECT * FROM "+table+";", function (err) {
         if (err) throw err;
       });
